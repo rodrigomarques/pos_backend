@@ -3,7 +3,9 @@ const uuid = require('uuid');
 //dynamoose.AWS.config.update({
 //    region: 'us-east-2',
 //});
-dynamoose.local();
+//dynamoose.local();
+dynamoose.aws.ddb.local();
+
 const localizacaoSchema = new dynamoose.Schema({
     _id: {
         type: String,
