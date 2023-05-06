@@ -34,7 +34,7 @@ const localizacaoSchema = new dynamoose.Schema({
         required: true,
     },
     data:{
-        type: DateTime,
+        type: Date,
     },
     posicao:{
         type: String,
