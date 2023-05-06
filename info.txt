@@ -1,0 +1,3 @@
+https://medium.com/@lucassoarestech/criando-uma-api-restful-em-nodejs-com-dynamodb-6801c8f2a936
+https://docs.aws.amazon.com/pt_br/sdk-for-javascript/v2/developer-guide/dynamodb-examples.html
+https://docs.aws.amazon.com/pt_br/sdk-for-javascript/v2/developer-guide/dynamodb-examples-using-tables.html
