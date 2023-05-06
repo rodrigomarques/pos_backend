@@ -4,7 +4,9 @@ const uuid = require('uuid');
 //    region: 'us-east-2',
 //});
 //dynamoose.local();
-dynamoose.aws.ddb.local();
+dynamoose.aws.ddb.local({
+    "region": "us-east-2"
+});
 //dynamoose.aws.ddb.local(http://localhost:8000)
 
 /*
