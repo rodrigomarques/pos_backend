@@ -16,12 +16,17 @@ AWS Secret Access Key [None]: 1q2w3e4r
 Default region name [None]: us-east-2
 Default output format [None]:
 
+Pelo Default
+
+AKIAWJNXYTUNRYC5J576
+s/c19uFW4vARZ+26RuBN39xoEb2PiTeMieSQlGAj
+
 // Create new DynamoDB instance
 */
 const ddb = new dynamoose.aws.ddb.DynamoDB({
     "credentials": {
-        "accessKeyId": "possystemkey",
-        "secretAccessKey": "1q2w3e4r"
+        "accessKeyId": "AKIAWJNXYTUNRYC5J576",
+        "secretAccessKey": "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"
     },
     "region": "us-east-2"
 });
