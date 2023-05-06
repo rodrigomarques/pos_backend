@@ -1,5 +1,5 @@
 const DB = require("./../database/connection")
-
+const LocalizacaoDB = require("./../models/Localizacao")
 class LocalizaoController {
     async enviarLocalizacao(req, res) {
         let data = {}
@@ -33,6 +33,32 @@ class LocalizaoController {
                 data.erro = "Usuario nao encontrado"
                 return res.status(400).json(data)    
             }
+            
+        } catch (e) {
+            console.log(e.message)
+            data.erro = "Erro ao salvar cliente"
+            return res.status(500).json(data)
+        }
+    }
+
+    async enviarLocalizacaoHistorico(req, res) {
+        let data = {}
+        try {
+            let body = req.body
+
+            let latitude = body.latitude
+            let longitude = body.longitude
+            let usuario = body.usuario
+            let tipo = body.tipo
+            let dt = new Date()
+
+            const loc = await LocalizacaoDB.create({
+                tipo : tipo,
+                chave_fk : usuario, 
+                data : dt,
+                posicao : `${latitude},${longitude}`
+            });
+            return res.json(loc);
             
         } catch (e) {
             console.log(e.message)
