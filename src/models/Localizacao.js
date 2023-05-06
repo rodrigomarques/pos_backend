@@ -30,7 +30,7 @@ const localizacaoSchema = new dynamoose.Schema({
         type: String,
     },
     chave_fk:{
-        type: number,
+        type: Number,
         required: true,
     },
     data:{
