@@ -50,12 +50,10 @@ class LocalizaoController {
             let longitude = body.longitude
             let usuario = body.usuario
             let tipo = body.tipo
-            let dt = new Date()
 
             const loc = await LocalizacaoDB.create({
                 tipo : tipo,
                 chave_fk : usuario, 
-                data : dt,
                 posicao : `${latitude},${longitude}`
             });
             return res.json(loc);

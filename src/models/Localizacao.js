@@ -47,14 +47,11 @@ const localizacaoSchema = new dynamoose.Schema({
         type: Number,
         required: true,
     },
-    data:{
-        type: Date,
-    },
     posicao:{
         type: String,
     },
 },
 {
-timestamps: false,
+    timestamps: true,
 });
 module.exports = dynamoose.model('Localizacao', localizacaoSchema);
