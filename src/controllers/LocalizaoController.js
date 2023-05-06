@@ -22,13 +22,19 @@ class LocalizaoController {
                     data.message = "Localização atualizada"
                     let sqlupdate = `update localizacao set latitude = ${latitude}, longitude = ${longitude} where usuario_id = ${usuario}`;
                     await con.execute(sqlupdate);
-                    return res.json(data)
                 }else{
                     data.message = "Localização salva"
                     let sqlinsert = `insert into localizacao values(${usuario}, ${latitude}, ${longitude}, now())`;
                     await con.execute(sqlinsert);
-                    return res.json(data)
                 }
+
+                await LocalizacaoDB.create({
+                    tipo : usuarios[0].tipo,
+                    chave_fk : usuario, 
+                    posicao : `${latitude},${longitude}`
+                });
+
+                return res.json(data)
             }else{
                 data.erro = "Usuario nao encontrado"
                 return res.status(400).json(data)    
